@@ -1,58 +1,156 @@
-# Kuku Monitor
+# Kuku Docker Monitor
 
-A sleek, terminal-aesthetic system monitoring dashboard built with Node.js and vanilla HTML/CSS/JS.
-
+A lightweight Dockerized monitoring dashboard built with Node.js.
 
 ## Features
 
-- **Real-time CPU Usage** - Live CPU percentage with visual bar
-- **Memory Monitoring** - Used/Free RAM with percentage
-- **Load Average** - System load (1m, 5m, 15m)
-- **Network I/O** - Upload/Download speed in KB/s
-- **Process List** - Top running processes by memory usage
-- **System Logs** - Simulated live log output
-- **CRT Effects** - Scanlines, flicker, and terminal glow
+* Live system monitoring dashboard
+* Docker-ready setup
+* Lightweight and simple
+* Runs on LAN or localhost
+* Beginner-friendly project structure
 
-## Quick Start
+## Tech Stack
+
+* Node.js
+* HTML/CSS/JavaScript
+* Docker
+
+---
+
+# Project Structure
+
+```text
+Kuku-Docker-Monitor/
+├── Dockerfile
+├── .dockerignore
+├── package.json
+├── package-lock.json
+├── server.js
+├── index.html
+├── README.md
+└── .gitignore
+```
+
+---
+
+# Installation
+
+## Clone Repository
 
 ```bash
-# Install dependencies
+git clone https://github.com/Kukudukuuuu/Kuku-Docker-Monitor.git
+cd Kuku-Docker-Monitor
+```
+
+---
+
+# Run Locally
+
+Install dependencies:
+
+```bash
 npm install
-
-# Start the server
-npm start
 ```
 
-Open **http://localhost:3001** in your browser.
+Start server:
 
-## Project Structure
-
-```
-terminal-monitor/
-├── index.html      # Frontend (terminal UI)
-├── server.js       # Backend (API + static files)
-├── package.json   # Dependencies
-├── .gitignore     # Git ignore rules
-└── README.md      # This file
+```bash
+node server.js
 ```
 
-## How It Works
+Open browser:
 
-- **Backend (Node.js)**: Uses `os` module to read real system metrics
-  - CPU usage via `os.cpus()` times
-  - Memory via `os.totalmem()` / `os.freemem()`
-  - Network via PowerShell (Windows) or `/proc/net/dev` (Linux)
-  - Processes via `Get-Process` (Windows) or `ps aux` (Linux)
+```text
+http://localhost:3001
+```
 
-- **Frontend (HTML/JS)**: Fetches from `/api/metrics` every 2 seconds
-  - Fallback demo mode if server not running
-  - Terminal-style CSS with scanline effects
+---
 
-## Supported Platforms
+# Docker Setup
 
-- **Windows** - Full support with PowerShell commands
-- **Linux/macOS** - Full support via native commands (`ps aux`, `/proc/net/dev`, `os.loadavg`)
+## Build Docker Image
 
-## License
+```bash
+docker build -t kuku-docker-monitor .
+```
 
-MIT
+## Run Docker Container
+
+```bash
+docker run -p 3001:3001 kuku-docker-monitor
+```
+
+Open:
+
+```text
+http://localhost:3001
+```
+
+---
+
+# Dockerfile
+
+```Dockerfile
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3001
+
+CMD ["node", "server.js"]
+```
+
+---
+
+# .dockerignore
+
+```text
+node_modules
+.git
+npm-debug.log
+```
+
+---
+
+# Git Workflow
+
+Push updates:
+
+```bash
+git add .
+git commit -m "update"
+git push
+```
+
+Pull latest changes:
+
+```bash
+git pull
+```
+
+---
+
+# Future Improvements
+
+* Live graphs
+* Docker container monitoring
+* RAM/CPU charts
+* WebSocket real-time updates
+* Dark mode UI
+* Reverse proxy support
+* Multi-device monitoring
+* Mobile responsive dashboard
+
+---
+
+# License
+
+MIT License
+
