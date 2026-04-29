@@ -150,6 +150,62 @@ git pull
 
 ---
 
+# Docker Hub Usage
+
+Pull image:
+
+```bash
+docker pull kukudukuuuu/kuku-docker-monitor
+```
+
+Run container:
+
+```bash
+docker run -p 3001:3001 kukudukuuuu/kuku-docker-monitor
+```
+
+Docker Compose example:
+
+```yaml
+services:
+  monitor:
+    image: kukudukuuuu/kuku-docker-monitor:latest
+
+    ports:
+      - "3001:3001"
+
+    restart: unless-stopped
+```
+
+---
+
+# Publishing To Docker Hub
+
+Build image:
+
+```bash
+docker build -t kukudukuuuu/kuku-docker-monitor:latest .
+```
+
+Login:
+
+```bash
+docker login
+```
+
+Push image:
+
+```bash
+docker push kukudukuuuu/kuku-docker-monitor:latest
+```
+
+---
+
+# License
+
+MIT License
+
+
 # License
 
 MIT License
