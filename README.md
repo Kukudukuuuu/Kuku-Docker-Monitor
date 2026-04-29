@@ -107,20 +107,7 @@ EXPOSE 3001
 CMD ["node", "server.js"]
 ```
 
----
 
-# Future Improvements
-
-* Live graphs
-* Docker container monitoring
-* RAM/CPU charts
-* WebSocket real-time updates
-* Dark mode UI
-* Reverse proxy support
-* Multi-device monitoring
-* Mobile responsive dashboard
-
----
 
 # Docker Hub Usage
 
@@ -148,7 +135,20 @@ services:
 
     restart: unless-stopped
 ```
+---
 
+# Future Improvements
+
+* Live graphs
+* Docker container monitoring
+* RAM/CPU charts
+* WebSocket real-time updates
+* Dark mode UI
+* Reverse proxy support
+* Multi-device monitoring
+* Mobile responsive dashboard
+
+---
 
 # License
 
