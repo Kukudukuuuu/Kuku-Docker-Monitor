@@ -76,7 +76,7 @@ CMD ["node", "server.js"]
 
 
 
-# Docker Hub Usage
+# Docker Image Usage
 
 Pull image:
 
