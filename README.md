@@ -110,9 +110,7 @@ services:
 * Docker container monitoring
 * RAM/CPU charts
 * WebSocket real-time updates
-* Dark mode UI
 * Reverse proxy support
-* Multi-device monitoring
 * Mobile responsive dashboard
 
 ---
