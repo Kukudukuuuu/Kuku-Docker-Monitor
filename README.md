@@ -34,39 +34,6 @@ Kuku-Docker-Monitor/
 
 ---
 
-# Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/Kukudukuuuu/Kuku-Docker-Monitor.git
-cd Kuku-Docker-Monitor
-```
-
----
-
-# Run Locally
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start server:
-
-```bash
-node server.js
-```
-
-Open browser:
-
-```text
-http://localhost:3001
-```
-
----
-
 # Docker Setup
 
 ## Build Docker Image
