@@ -109,34 +109,6 @@ CMD ["node", "server.js"]
 
 ---
 
-# .dockerignore
-
-```text
-node_modules
-.git
-npm-debug.log
-```
-
----
-
-# Git Workflow
-
-Push updates:
-
-```bash
-git add .
-git commit -m "update"
-git push
-```
-
-Pull latest changes:
-
-```bash
-git pull
-```
-
----
-
 # Future Improvements
 
 * Live graphs
@@ -177,36 +149,7 @@ services:
     restart: unless-stopped
 ```
 
----
-
-# Publishing To Docker Hub
-
-Build image:
-
-```bash
-docker build -t kukudukuuuu/kuku-docker-monitor:latest .
-```
-
-Login:
-
-```bash
-docker login
-```
-
-Push image:
-
-```bash
-docker push kukudukuuuu/kuku-docker-monitor:latest
-```
-
----
 
 # License
 
 MIT License
-
-
-# License
-
-MIT License
-
